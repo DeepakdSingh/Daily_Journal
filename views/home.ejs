@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+
+<h1>Home</h1>
+<p><%= content %></p>
+<% posts.forEach((object)=>{ %>
+    <h1><%= object.title %></h1>
+<%  let content = object.content.substring(0,105)+"..."; %>
+    <p><%= content %><a href="/posts/<%= object._id %>">more</a></p>
+    
+<% }); %>
+
+<%- include('partials/footer') -%>
+
+<!-- If there is anything that you want to show on webpage than use tag with = 
+     and when you just want to write some js logic that use tag only. -->
